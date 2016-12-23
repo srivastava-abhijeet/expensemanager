@@ -1,0 +1,68 @@
+<div class="bs-example">
+        <form style="padding: 1%">
+            <div class="row well">
+
+                <div class="col-md-offset-3 col-md-1">
+                    <h4> <span class="label label-info">Select criteria</span> </h4>
+                </div>
+
+                <div class="col-md-2">
+                    <input type="text" name="daterange" class="form-control" ng-model="selectedDateRange"/>
+                </div>
+
+                <div class="col-md-2">
+                    <select  id="catSelect" class="form-control" multiple="multiple" ng-model="selectedCategoryList">
+                    </select>
+                </div>
+
+                <div class="col-md-1">
+                    <button id="btnGetExpense"  class="btn btn-primary" class="form-control" data-ng-click="getExpenseReport()">Get Expense</button>
+                </div>
+
+            </div>
+
+
+            <div data-ng-repeat="expense in expenseListToEdit">
+
+                <div class="row" style="background-color: indianred; padding: 1%">
+
+                    <div class="col-md-offset-3 col-md-2">
+                        <input type="date" class="form-control" ng-model="expense.date" value="{{ expense.date | date: 'MM/dd/yyyy' }}">
+                    </div>
+
+                    <div class="col-md-2">
+                        <select class="form-control" ng-model="expense.category" ng-options="category.value as category.title for category in categoryListForRows">
+                            <option value="">Select Category</option>
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-1">
+                        <input type="number" step="any" min="0" class="form-control" ng-model="expense.amount">
+                    </div>
+
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" ng-model="expense.note">
+                    </div>
+
+                    <div class="col-md-1">
+                        <span class="glyphicon glyphicon-minus-sign" style="font-size:1.8em; cursor: pointer" data-ng-click="deleteExpenseRow(expenseListToEdit,$index)"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row" style="padding: 3%" ng-show="expenseListToEdit.length>0">
+
+                <div class="col-md-offset-5 col-md-1">
+                    <button id="btnSave"  class="btn btn-primary" data-ng-click="save()">Update</button>
+                </div>
+
+                <div class="col-md-1">
+                    <a id="btnCancel" href="#/main" class="btn btn-primary">Cancel</a>
+                </div>
+            </div>
+
+    </form>
+</div>

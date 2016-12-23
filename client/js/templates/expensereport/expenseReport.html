@@ -1,0 +1,41 @@
+<div class="bs-example">
+   <form style="padding:1%">
+
+         <div class="row well">
+
+            <div class="col-md-offset-3 col-md-1">
+               <h4> <span class="label label-info">Select criteria</span> </h4>
+            </div>
+
+            <div class="col-md-2">
+               <input type="text" name="daterange" class="form-control" ng-model="selectedDateRange"/>
+            </div>
+
+            <div class="col-md-2">
+               <select  id="catSelect" class="form-control" multiple="multiple" ng-model="selectedCategoryList">
+               </select>
+            </div>
+
+            <div class="col-md-1">
+               <button id="btnGetExpense"  class="btn btn-primary" class="form-control" data-ng-click="getExpenseReport()">Get Expense Report</button>
+            </div>
+
+         </div>
+
+         <br>
+
+         <div class="row">
+
+            <div class="col-md-offset-1 col-md-4" ui-grid="gridOptions" ui-grid-auto-resize class="expenseListGrid" style="border: groove   ">
+                <div class="watermark" ng-show="!gridOptions.data.length">No Data Available.</div>
+            </div>
+
+            <div class="col-md-offset-1  col-md-4">
+                <nvd3 options="options" data="chartDataSource"></nvd3>
+            </div>
+
+         </div>
+
+
+   </form>
+</div>
