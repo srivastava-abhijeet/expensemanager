@@ -178,18 +178,6 @@ app.post('/editExpenseList', function(req, res) {
     // }
 
 
-
-    var done = function(err){
-
-        if(err)
-            console.log('Error occurred while editing expense');
-        else
-            console.log('Expense successfully edited');
-
-
-
-    };
-
     async.each(expenseListToEdit, function (expense, done) {
         Expense.findByIdAndUpdate(expense._id, expense, function(err, model) {
             if (err) {
@@ -207,11 +195,33 @@ app.post('/editExpenseList', function(req, res) {
 
     });
 
-
-
-
-
 });
+
+//********************************************* Delete expense **************************************************//
+
+
+app.delete('/deleteExpense/:expenseRowId', function(req, res) {
+
+
+    console.log("**************************** /deleteExpense Server log **************************************");
+
+    var expenseRowId = req.params.expenseRowId;
+    console.log('expenseRowId: ' + util.inspect(expenseRowId));
+
+    Expense.findByIdAndRemove(expenseRowId, function (err, expense) {
+
+        if (err) {
+            res.send({error: err});
+        }
+        else{
+            console.log('expense deleted: ' + util.inspect(expense));
+            res.send({ expenseDeleted: expense });
+        }
+
+    });
+});
+
+
 
 
 

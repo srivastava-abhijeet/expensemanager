@@ -1,6 +1,7 @@
 (function() {
 
-    var app = angular.module("itemCheckerModule", ['ngRoute', 'angular-loading-bar','ngCookies','ui.grid','ui.grid.autoResize','nvd3']);
+    var app = angular.module("itemCheckerModule", ['ngRoute', 'angular-loading-bar','ngCookies','ui.grid','ui.grid.autoResize',
+        'nvd3','ui.bootstrap']);
 
     app.config(function($routeProvider) {
 

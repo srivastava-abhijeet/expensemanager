@@ -23,7 +23,7 @@
 
             </div>
 
-            <div data-ng-repeat="expense in expenseListToAdd">
+            <div data-ng-repeat="expense in expenseListToAdd" style="background-color: #d3741c">
 
                 <div class="row" style="padding: 1%">
 
@@ -48,8 +48,18 @@
                     </div>
 
                     <div class="col-md-1">
-                        <span ng-hide="expenseListToAdd.length === 1" class="glyphicon glyphicon-minus-sign" style="font-size:1.8em; cursor: pointer" data-ng-click="deleteExpenseRow(expenseListToAdd,$index)"></span>
-                        <span ng-show="$index === expenseListToAdd.length-1" class="glyphicon glyphicon-plus-sign" style="font-size:1.8em; cursor: pointer" data-ng-click="addExpenseRow(expenseListToAdd)"></span>
+
+                        <span ng-hide="expenseListToAdd.length === 1" class="glyphicon glyphicon-minus-sign"
+                              style="font-size:1.8em; cursor: pointer; color: darkred" data-ng-click="deleteExpenseRow(expenseListToAdd,$index)"
+                              data-toggle="tooltip" title="Delete">
+                        </span>
+
+                        <span ng-show="$index === expenseListToAdd.length-1" class="glyphicon glyphicon-plus-sign"
+                              style="font-size:1.8em; cursor: pointer; color: darkgreen" data-ng-click="addExpenseRow(expenseListToAdd)"
+                              data-toggle="tooltip" title="Add">
+
+                        </span>
+
                     </div>
 
 

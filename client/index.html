@@ -56,7 +56,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
 
-
     <!-- Application css -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -73,12 +72,20 @@
     <script src="js/templates/login/authentication.service.js"></script>
     <script src="js/templates/header/HeaderController.js"></script>
 
+    <script src="js/global/directive/ngConfirmClick.js"></script>
+
+
+    <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="js/global/directive/confirmClick.js"></script>
+    <script src="js/global/directive/dialogModal.js"></script>
+
+
 
 
 </head>
 
 
-<body background="img/background.png">
+<body style="background-color: #d7cec7">
 
 <div ng-include="'js/templates/header/header.html'"></div>
 <div ng-view></div>

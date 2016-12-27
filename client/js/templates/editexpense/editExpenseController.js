@@ -90,43 +90,67 @@
 
 
 
-// Method called on 'save' click to update the changes in DB
+//********************************************* Service call to save/edit expenseList  **************************************************//
 
-$scope.save = function(){
+        $scope.save = function(){
 
-    console.log("expenseListToEdit: "+ JSON.stringify($scope.expenseListToEdit));
+            console.log("expenseListToEdit: "+ JSON.stringify($scope.expenseListToEdit));
 
-    $http({
-        method: 'POST',
-        url: '/editExpenseList',
-        data: $scope.expenseListToEdit
-    }).
-    then(function(response) {
+            $http({
+                method: 'POST',
+                url: '/editExpenseList',
+                data: $scope.expenseListToEdit
+            }).
+            then(function(response) {
 
-        var serverResponse = response.data;
+                var serverResponse = response.data;
 
-        if(serverResponse.error){
-            alert("DB error occurred while editing the expense(s)");
-        }
-        else{
-            alert('expense(s) edited to DB successfully');
-        }
+                if(serverResponse.error){
+                    alert("DB error occurred while editing the expense(s)");
+                }
+                else{
+                    alert('expense(s) edited to DB successfully');
+                }
 
-    }, function(error) {
-        alert("Server error while editing expenses");
-    });
-};
+            }, function(error) {
+                alert("Server error while editing expenses");
+            });
+        };
 
 //********************************************* Delete expenses  **************************************************//
 
 
         $scope.deleteExpenseRow = function(list,index){
 
-            list.splice(index, 1);
             console.log("Inside Delete method");
 
+            var expenseRowId = list[index]._id;
+
+            console.log("_id to delete: "+expenseRowId);
+
+            $http.delete('/deleteExpense/' + expenseRowId)
+                .success(function (data, status, headers) {
+                    if(data.error){
+
+                        alert("DB error occurred while deleting expense");
+                    }
+                    else{
+                        alert('expense: [Date:'+ data.expenseDeleted.date +', Category:'+ data.expenseDeleted.category + ', Amount:'+
+                            data.expenseDeleted.amount +', Note:'+ data.expenseDeleted.note +'] deleted from DB successfully');
+
+                        // populate expenseList after deleting the expense
+                        $scope.getExpenseReport();
+                    }
+                })
+                .error(function (data, status, header, config) {
+                    alert("Server error occurred while deleting expense");
+
+                });
+
         };
+
     };
+
 
     var app = angular.module("itemCheckerModule");
     app.controller("editExpenseController", editExpenseController);
