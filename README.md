@@ -1,5 +1,5 @@
 # expensemanager
-This is app for managing the daily expenses. It facilitates adding, editing, deleting, and reporting the expenses. mongodb is used for database hosted on https://mlab.com/
+This is app for managing the daily expenses. It facilitates adding, editing, deleting, and reporting the expenses. Angular 1.X is used for designing screens and components and mongodb is used for database hosted on https://mlab.com/
 
 ## Requirements
 
