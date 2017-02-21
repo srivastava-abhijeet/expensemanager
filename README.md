@@ -14,6 +14,14 @@ This is app for managing the daily expenses. It facilitates adding, editing, del
 
 
 ## Quick start 
+Clone the repository into local workspace.
+
+For installing dependency
+
+```bash
+$ npm install
+```
+
 For running the app
 
 ```bash
