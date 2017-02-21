@@ -16,7 +16,8 @@ This is app for managing the daily expenses. It facilitates adding, editing, del
 ## Quick start 
 For running the app
 
+```bash
 $ node index
-
+```
 
 
