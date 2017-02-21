@@ -12,11 +12,11 @@ This is app for managing the daily expenses. It facilitates adding, editing, del
         - type `choco install nodejs.install`
 
 
-```
+
 ## Quick start 
 For running the app
-```bash
+
 $ node index
-```
+
 
 
