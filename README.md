@@ -33,3 +33,13 @@ $ node index
 ### Home Page
 
 ![Home screen](/screenshot/hompage.png?raw=true "Optional Title")
+
+
+### Add Expense
+
+![Home screen](/screenshot/add.png?raw=true "Optional Title")
+
+
+### Expense Report
+
+![Home screen](/screenshot/report.png?raw=true "Optional Title")
