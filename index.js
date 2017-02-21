@@ -47,7 +47,9 @@ var Expense= mongoose.model('expensemaster', expenseSchema);
 var database;
 
 // Connection URL
-var url = 'mongodb://localhost:27017/expensemanager';
+//var url = 'mongodb://localhost:27017/expensemanager';
+
+var url = 'mongodb://abhijeet:abhi_head@ds157529.mlab.com:57529/expensemanager';
 
 // Use connect method to connect to the server
 mongoose.connect(url, function(err, db) {
