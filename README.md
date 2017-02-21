@@ -32,4 +32,4 @@ $ node index
 
 ### Home Page
 
-![Home screen](./screenshot/homepage.png?raw=true "Optional Title")
+![Home screen](/screenshot/hompage.png?raw=true "Optional Title")
