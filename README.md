@@ -28,4 +28,8 @@ For running the app
 $ node index
 ```
 
+## Screens
 
+### Home Page
+
+![Alt text](./screenshot/home.png?raw=true "Optional Title")
