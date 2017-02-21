@@ -1,5 +1,5 @@
 # expensemanager
-This is app for managing the daily expenses. It facilitates adding, editing, deleting, and reporting the expenses.
+This is app for managing the daily expenses. It facilitates adding, editing, deleting, and reporting the expenses. mongodb is used for database hosted on https://mlab.com/
 
 ## Requirements
 
